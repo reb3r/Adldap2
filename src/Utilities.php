@@ -205,6 +205,10 @@ class Utilities
      */
     public static function isValidSid($sid)
     {
+        if ($sid === null) {
+            return false;
+        }
+
         return (bool) preg_match("/^S-\d(-\d{1,10}){1,16}$/i", $sid);
     }
 
@@ -217,6 +221,10 @@ class Utilities
      */
     public static function isValidGuid($guid)
     {
+        if ($guid === null) {
+            return false;
+        }
+
         return (bool) preg_match('/^([0-9a-fA-F]){8}(-([0-9a-fA-F]){4}){3}-([0-9a-fA-F]){12}$|^([0-9a-fA-F]{8}-){3}[0-9a-fA-F]{8}$/', $guid);
     }
 
