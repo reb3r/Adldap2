@@ -245,13 +245,13 @@ abstract class Model implements ArrayAccess, JsonSerializable
                 // encoding, we'll encode only the
                 // attributes that need to be.
                 if (!MbString::isUtf8($val)) {
-                    $val = utf8_encode($val);
+                    $val = mb_convert_encoding($val, 'UTF-8', mb_list_encodings());
                 }
             } else {
                 // If the mbstring extension is not loaded, we'll
                 // encode all attributes to make sure
                 // they are encoded properly.
-                $val = utf8_encode($val);
+                $val = mb_convert_encoding($val, 'UTF-8', mb_list_encodings());
             }
         });
 
