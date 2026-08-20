@@ -1,5 +1,5 @@
 {
-  "name": "reb3r/adldap2",
+  "name": "aveyara/adldap2",
   "type": "library",
   "description": "A PHP LDAP Package for humans.",
   "keywords": [
